@@ -77,5 +77,11 @@ public class StringCalculatorTestCases {
 		assertThat(StringCalculator.SumGreaterThan1000("2,1001"), is(2));
 		assertThat(StringCalculator.SumGreaterThan1000("5,2001,1567,25"), is(30));
 	}
+	
+	@Test
+	public void delimitersOfAnyLengthinTheSpecifiedFormat() {
+		assertThat(StringCalculator.Add("//[***]\n1***2***3"), is(6));
+		assertThat(StringCalculator.Add("//[***]\n3***2***7"), is(12));
+	}
 
 }

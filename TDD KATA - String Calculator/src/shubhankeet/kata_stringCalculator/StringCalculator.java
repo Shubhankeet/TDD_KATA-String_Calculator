@@ -61,6 +61,10 @@ public class StringCalculator {
 	}
 	
 	private static String parsingTheDelimiter(String item) {
-		return Pattern.quote(item.substring(2));
+		String delimiterItem = item.substring(2);
+		if (delimiterItem.startsWith("[")) {
+			delimiterItem = delimiterItem.substring(1, delimiterItem.length() - 1);
+		}
+		return Pattern.quote(delimiterItem);
 	}
 }
