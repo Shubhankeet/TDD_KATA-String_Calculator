@@ -63,5 +63,13 @@ public class StringCalculatorTestCases {
 		
 		StringCalculator.Add("-9");
 	}
+	
+	@Test
+	public void throwsExceptionMessageAlongWithMultipleNegativeNumbers() {
+		expectedExceptionBehaviour.expect(IllegalArgumentException.class);
+		expectedExceptionBehaviour.expectMessage("negatives not allowed: -17,-89,-101");
+		
+		StringCalculator.Add("-17,-89,-101");
+	}
 
 }

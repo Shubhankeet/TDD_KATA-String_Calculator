@@ -2,6 +2,7 @@ package shubhankeet.kata_stringCalculator;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
+import java.util.stream.Collectors;
 
 public class StringCalculator {
 
@@ -20,7 +21,8 @@ public class StringCalculator {
 
 	private void checkNoNegativeNumbersPresent() {
 		if (getNumberString().anyMatch(num -> num < 0)) {
-			throw new IllegalArgumentException("negatives not allowed: -9");
+			String multipleNegativeNumbers = getNumberString().filter(num -> num < 0).mapToObj(Integer::toString).collect(Collectors.joining(","));
+			throw new IllegalArgumentException("negatives not allowed: " + multipleNegativeNumbers);
 		}
 	}
 
