@@ -7,8 +7,15 @@ import static org.hamcrest.CoreMatchers.is;
 public class StringCalculatorTestCases {
 	
 	@Test
-	public void sumOfEmptyStringWillReturn0() {
+	public void sumOfEmptyStringReturns0() {
 		assertThat(StringCalculator.Add(""), is(0));
+	}
+	
+	@Test
+	public void sumOfSingleNumberString() {
+		assertThat(StringCalculator.Add("1"), is(1));
+		assertThat(StringCalculator.Add("54"), is(54));
+		assertThat(StringCalculator.Add("176"), is(176));
 	}
 
 }
