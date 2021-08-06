@@ -1,6 +1,9 @@
 package shubhankeet.kata_stringCalculator;
 
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
+
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -50,8 +53,12 @@ public class StringCalculatorTestCases {
 		assertThat(StringCalculator.Add("//;\n4;5"), is(9));
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
+	@Rule
+	public ExpectedException expectedExceptionBehaviour = ExpectedException.none();
+	
+	@Test
 	public void throwsExceptionOnNegativeNumber() {
+		expectedExceptionBehaviour.expect(IllegalArgumentException.class);
 		StringCalculator.Add("-9");
 		StringCalculator.Add("-54");
 	}
