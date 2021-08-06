@@ -1,6 +1,7 @@
 package shubhankeet.kata_stringCalculator;
 
 import java.util.stream.IntStream;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -53,9 +54,13 @@ public class StringCalculator {
 	private static StringCalculator parseTheInputString(String numbers) {
 		if (numbers.startsWith("//")) {
 			String[] items = numbers.split("\n", 2);
-			return new StringCalculator(items[0].substring(2), items[1]);
+			return new StringCalculator(parsingTheDelimiter(items[0]), items[1]);
 		} else {
 			return new StringCalculator(",|\n", numbers);
 		}
+	}
+	
+	private static String parsingTheDelimiter(String item) {
+		return Pattern.quote(item.substring(2));
 	}
 }

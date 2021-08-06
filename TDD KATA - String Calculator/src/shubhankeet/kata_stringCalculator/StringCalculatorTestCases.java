@@ -50,7 +50,7 @@ public class StringCalculatorTestCases {
 	@Test
 	public void sumOfNumberStringsWithmultipleDelimiters() {
 		assertThat(StringCalculator.Add("//;\n1;2"), is(3));
-		assertThat(StringCalculator.Add("//;\n4;5"), is(9));
+		assertThat(StringCalculator.Add("//.\n2.5.4"), is(11));
 	}
 	
 	@Rule
