@@ -31,5 +31,17 @@ public class StringCalculatorTestCases {
 		assertThat(StringCalculator.Add("57,60,10,45"), is(172));
 		assertThat(StringCalculator.Add("34,200,5,5"), is(244));
 	}
+	
+	@Test
+	public void sumOfNumberStringsWithNewLineinBetween() {
+		assertThat(StringCalculator.Add("1\n5"), is(6));
+		assertThat(StringCalculator.Add("20\n30\n9"), is(59));
+	}
+	
+	@Test
+	public void sumOfNumberStringsWithNewLineOrCommainBetween() {
+		assertThat(StringCalculator.Add("1\n2,3"), is(6));
+		assertThat(StringCalculator.Add("43\n21,30"), is(94));
+	}
 
 }
