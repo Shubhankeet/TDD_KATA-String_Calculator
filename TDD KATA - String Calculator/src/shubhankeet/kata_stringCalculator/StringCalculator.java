@@ -1,6 +1,7 @@
 package shubhankeet.kata_stringCalculator;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class StringCalculator {
 
@@ -13,7 +14,14 @@ public class StringCalculator {
 	}
 
 	private int sumOfStrings() {
-		return Arrays.stream(numberString.split(delimiter)).mapToInt(Integer::parseInt).sum();
+		if (getNumberString().anyMatch(num -> num < 0)) {
+			throw new IllegalArgumentException();
+		}
+		return getNumberString().sum();
+	}
+
+	private IntStream getNumberString() {
+		return Arrays.stream(numberString.split(delimiter)).mapToInt(Integer::parseInt);
 	}
 
 	public static int Add(String numbers) {

@@ -49,5 +49,11 @@ public class StringCalculatorTestCases {
 		assertThat(StringCalculator.Add("//;\n1;2"), is(3));
 		assertThat(StringCalculator.Add("//;\n4;5"), is(9));
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void throwsExceptionOnNegativeNumber() {
+		StringCalculator.Add("-9");
+		StringCalculator.Add("-54");
+	}
 
 }
