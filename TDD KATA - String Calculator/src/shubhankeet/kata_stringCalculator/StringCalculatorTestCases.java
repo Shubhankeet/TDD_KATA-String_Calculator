@@ -24,5 +24,12 @@ public class StringCalculatorTestCases {
 		assertThat(StringCalculator.Add("57,60"), is(117));
 		assertThat(StringCalculator.Add("34,200"), is(234));
 	}
+	
+	@Test
+	public void sumOfCommaSeparatedGreaterThanTwoNumberStrings() {
+		assertThat(StringCalculator.Add("1,2,3"), is(6));
+		assertThat(StringCalculator.Add("57,60,10,45"), is(172));
+		assertThat(StringCalculator.Add("34,200,5,5"), is(244));
+	}
 
 }
