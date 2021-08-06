@@ -57,10 +57,11 @@ public class StringCalculatorTestCases {
 	public ExpectedException expectedExceptionBehaviour = ExpectedException.none();
 	
 	@Test
-	public void throwsExceptionOnNegativeNumber() {
+	public void throwsExceptionMessageOnNegativeNumber() {
 		expectedExceptionBehaviour.expect(IllegalArgumentException.class);
+		expectedExceptionBehaviour.expectMessage("negatives not allowed: -9");
+		
 		StringCalculator.Add("-9");
-		StringCalculator.Add("-54");
 	}
 
 }

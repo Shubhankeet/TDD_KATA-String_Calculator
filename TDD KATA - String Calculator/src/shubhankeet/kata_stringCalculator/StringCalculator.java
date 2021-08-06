@@ -14,10 +14,14 @@ public class StringCalculator {
 	}
 
 	private int sumOfStrings() {
-		if (getNumberString().anyMatch(num -> num < 0)) {
-			throw new IllegalArgumentException();
-		}
+		checkNoNegativeNumbersPresent();
 		return getNumberString().sum();
+	}
+
+	private void checkNoNegativeNumbersPresent() {
+		if (getNumberString().anyMatch(num -> num < 0)) {
+			throw new IllegalArgumentException("negatives not allowed: -9");
+		}
 	}
 
 	private IntStream getNumberString() {
