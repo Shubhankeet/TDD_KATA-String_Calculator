@@ -20,9 +20,7 @@ public class StringCalculator {
 		if (numbers.isEmpty())
 			return 0;
 
-		StringCalculator calculateInput = parseTheInputString(numbers);
-
-		return calculateInput.sumOfStrings();
+		return parseTheInputString(numbers).sumOfStrings();
 	}
 
 	private static StringCalculator parseTheInputString(String numbers) {
