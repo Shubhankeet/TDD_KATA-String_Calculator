@@ -87,6 +87,7 @@ public class StringCalculatorTestCases {
 	@Test
 	public void passingMultipleDelimiters() {
 		assertThat(StringCalculator.Add("//[-][;]\n1-2;3"), is(6));
+		assertThat(StringCalculator.Add("//[--][...]\n4--7...10"), is(21));
 	}
 
 }

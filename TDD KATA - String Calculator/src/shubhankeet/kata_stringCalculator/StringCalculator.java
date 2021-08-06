@@ -53,8 +53,9 @@ public class StringCalculator {
 
 	private static StringCalculator parseTheInputString(String numbers) {
 		if (numbers.startsWith("//")) {
-			String[] items = numbers.split("\n", 2);
-			return new StringCalculator(parsingTheDelimiter(items[0]), items[1]);
+			String[] itemSequence = numbers.split("\n", 2);
+			String parsingTheDelimiter = parsingTheDelimiter(itemSequence[0]);
+			return new StringCalculator(parsingTheDelimiter, itemSequence[1]);
 		} else {
 			return new StringCalculator(",|\n", numbers);
 		}
