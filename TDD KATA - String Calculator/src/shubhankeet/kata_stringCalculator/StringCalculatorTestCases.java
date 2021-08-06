@@ -43,5 +43,11 @@ public class StringCalculatorTestCases {
 		assertThat(StringCalculator.Add("1\n2,3"), is(6));
 		assertThat(StringCalculator.Add("43\n21,30"), is(94));
 	}
+	
+	@Test
+	public void sumOfNumberStringsWithmultipleDelimiters() {
+		assertThat(StringCalculator.Add("//;\n1;2"), is(3));
+		assertThat(StringCalculator.Add("//;\n4;5"), is(9));
+	}
 
 }
