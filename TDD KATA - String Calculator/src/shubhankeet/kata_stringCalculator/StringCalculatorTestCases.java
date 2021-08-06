@@ -71,5 +71,11 @@ public class StringCalculatorTestCases {
 		
 		StringCalculator.Add("-17,-89,-101");
 	}
+	
+	@Test
+	public void ignoreNumberBiggerThan1000() {
+		assertThat(StringCalculator.SumGreaterThan1000("2,1001"), is(2));
+		assertThat(StringCalculator.SumGreaterThan1000("5,2001,1567,25"), is(30));
+	}
 
 }

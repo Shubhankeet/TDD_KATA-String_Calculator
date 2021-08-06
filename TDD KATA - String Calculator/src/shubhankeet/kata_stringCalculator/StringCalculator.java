@@ -1,6 +1,5 @@
 package shubhankeet.kata_stringCalculator;
 
-import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -38,6 +37,17 @@ public class StringCalculator {
 
 	public static int Add(String numbers) {
 		return parseTheInputString(numbers).sumOfStrings();
+	}
+
+	public static int SumGreaterThan1000(String numbers) {
+		String[] strArray = numbers.split(","); 
+		int sum = 0;
+
+		for (String number : strArray) {
+			if (Integer.parseInt(number) < 1000)
+				sum += Integer.parseInt(number);
+		}
+		return sum;
 	}
 
 	private static StringCalculator parseTheInputString(String numbers) {
