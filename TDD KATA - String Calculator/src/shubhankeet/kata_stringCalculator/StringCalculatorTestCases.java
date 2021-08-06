@@ -17,5 +17,12 @@ public class StringCalculatorTestCases {
 		assertThat(StringCalculator.Add("54"), is(54));
 		assertThat(StringCalculator.Add("176"), is(176));
 	}
+	
+	@Test
+	public void sumOfCommaSeparatedTwoNumberStrings() {
+		assertThat(StringCalculator.Add("1,2"), is(3));
+		assertThat(StringCalculator.Add("57,60"), is(117));
+		assertThat(StringCalculator.Add("34,200"), is(234));
+	}
 
 }
