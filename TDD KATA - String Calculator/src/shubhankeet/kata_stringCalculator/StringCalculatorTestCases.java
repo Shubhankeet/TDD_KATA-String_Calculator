@@ -83,5 +83,10 @@ public class StringCalculatorTestCases {
 		assertThat(StringCalculator.Add("//[***]\n1***2***3"), is(6));
 		assertThat(StringCalculator.Add("//[***]\n3***2***7"), is(12));
 	}
+	
+	@Test
+	public void passingMultipleDelimiters() {
+		assertThat(StringCalculator.Add("//[-][;]\n1-2;3"), is(6));
+	}
 
 }

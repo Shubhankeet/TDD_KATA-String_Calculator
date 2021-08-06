@@ -41,7 +41,7 @@ public class StringCalculator {
 	}
 
 	public static int SumGreaterThan1000(String numbers) {
-		String[] strArray = numbers.split(","); 
+		String[] strArray = numbers.split(",");
 		int sum = 0;
 
 		for (String number : strArray) {
@@ -59,12 +59,12 @@ public class StringCalculator {
 			return new StringCalculator(",|\n", numbers);
 		}
 	}
-	
+
 	private static String parsingTheDelimiter(String item) {
 		String delimiterItem = item.substring(2);
 		if (delimiterItem.startsWith("[")) {
 			delimiterItem = delimiterItem.substring(1, delimiterItem.length() - 1);
 		}
-		return Pattern.quote(delimiterItem);
+		return Stream.of(delimiterItem.split("]\\[")).map(Pattern::quote).collect(Collectors.joining("|"));
 	}
 }
